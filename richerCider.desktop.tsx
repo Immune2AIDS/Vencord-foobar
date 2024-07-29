@@ -51,13 +51,6 @@ export default definePlugin({
                 match: /LOCAL_ACTIVITY_UPDATE:function\((\i)\)\{/,
                 replace: "$&$self.patchActivity($1.activity);",
             }
-        },
-        {
-            find: "}renderTimeBar(",
-            replacement: {
-                match: /renderTimeBar\((.{1,3})\){.{0,50}?let/,
-                replace: "renderTimeBar($1){let"
-            }
         }
     ],
     settingsAboutComponent: () => (
